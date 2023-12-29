@@ -8,13 +8,28 @@ public class Programa {
         lista.adicionar("BA");
         lista.adicionar("CE");
         lista.adicionar("DF");
-        System.out.println(lista.getTamanho());
-        System.out.println(lista.getPrmeiro().getValor());
-        System.out.println(lista.getUltimo().getValor());
+        System.out.println("tamanho: " + lista.getTamanho());
+        System.out.println("primeiro: " +lista.getPrimeiro().getValor());
+        System.out.println("ultimo: " +lista.getUltimo().getValor());
 
-        System.out.println(lista.get(0).getValor());
-        System.out.println(lista.get(1).getValor());
-        System.out.println(lista.get(2).getValor());
-        System.out.println(lista.get(3).getValor());
+        System.out.println("Lista antes da remoção: ");
+        for(int i=0; i < lista.getTamanho(); i++){
+            System.out.println(lista.get(i).getValor());
+        }
+
+        //remover   
+        lista.remover("ac");
+        //imprimir
+        System.out.println("Lista após remoção: ");
+        for(int i=0; i < lista.getTamanho(); i++){
+            System.out.println(lista.get(i).getValor());
+        }
+
+        //adicionar
+        lista.adicionar("SP");
+        System.out.println("Lista após adição: ");
+        for(int i=0; i < lista.getTamanho(); i++){
+            System.out.println(lista.get(i).getValor());
+        }
     }
 }
