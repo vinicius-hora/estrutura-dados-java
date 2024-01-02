@@ -1,13 +1,16 @@
 package listaLigada;
 
+import javax.print.DocFlavor.STRING;
+
 public class Programa {
     public static void main(String[] args) {
-        ListaLigada lista = new ListaLigada();
+        ListaLigada<String> lista = new ListaLigada<String>();
 
         lista.adicionar("AC");
         lista.adicionar("BA");
         lista.adicionar("CE");
         lista.adicionar("DF");
+        
         System.out.println("tamanho: " + lista.getTamanho());
         System.out.println("primeiro: " +lista.getPrimeiro().getValor());
         System.out.println("ultimo: " +lista.getUltimo().getValor());
