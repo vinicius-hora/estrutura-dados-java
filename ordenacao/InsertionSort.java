@@ -1,8 +1,8 @@
 package ordenacao;
 
 public class InsertionSort {
-    public static void main(String[] args) {
-        int[] vetor = new int[100000];
+    public static Resultado insertionSort(int[] vetor) {
+        int trocas = 0;
 
         for(int i = 0; i < vetor.length; i++){
             vetor[i] = (int) (Math.random() * vetor.length);
@@ -12,9 +12,6 @@ public class InsertionSort {
         // for(int i = 0; i < vetor.length; i++){
         //     System.out.println(vetor[i]);
         // }
-
-        long tempoInicial = System.currentTimeMillis();
-        long fim;
         int aux;
         int j;
         for(int i = 1; i < vetor.length; i++){
@@ -23,16 +20,17 @@ public class InsertionSort {
             while(j >= 0 && vetor[j] > aux){
                 vetor[j + 1] = vetor[j];
                 j--;
+                trocas++;
             }
             vetor[j + 1] = aux;
+            trocas++;
         }
-        fim = System.currentTimeMillis();
-        System.out.println("Tempo de ordenação: " + (fim - tempoInicial) + "ms");
-
         // System.out.println("Depois do insertion sort: \n");
         // for(int i = 0; i < vetor.length; i++){
             
         //     System.out.println(vetor[i]);
         // }
+
+        return new Resultado(vetor, trocas);
     }
 }

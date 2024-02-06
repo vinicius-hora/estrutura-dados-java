@@ -1,15 +1,14 @@
 package ordenacao;
 
 public class BubbleSort {
-    public static void main(String[] args) {
-        int[] vetor = new int[100000];
+    public static Resultado bubleSort(int[] vetor) {
+        int trocas = 0;
 
         for(int i = 0; i < vetor.length; i++){
             vetor[i] = (int) (Math.random() * vetor.length);
             // System.out.println(vetor[i]);
         }
-        long tempoInicial = System.currentTimeMillis();
-        long fim;
+        
         // bubble sort O(n^2)
         int aux;
         for(int i = 0; i < vetor.length; i++){ // O(n)
@@ -18,15 +17,10 @@ public class BubbleSort {
                     aux = vetor[j];
                     vetor[j] = vetor[i];
                     vetor[i] = aux;
+                    trocas++;
                 }
             }
         }
-        fim = System.currentTimeMillis();
-        System.out.println("Tempo de ordenação: " + (fim - tempoInicial) + "ms");
-
-        // System.out.println("Depois do bubble sort: \n");
-        // for(int i = 0; i < vetor.length; i++){
-        //     System.out.println(vetor[i]);
-        // }
+        return new Resultado(vetor, trocas);
     }
 }
