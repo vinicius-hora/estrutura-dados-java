@@ -13,8 +13,5 @@ public class Main {
         fila.remover();
         System.out.println("Primeiro da fila: " + fila.get());
 
-        int[] vetor;
-        vetor = new int[10];
-        vetor
     }
 }
