@@ -89,4 +89,19 @@ public class ListaLigada<TIPO> {
     public IteratorListaLigada<TIPO> getIterator(){
         return new IteratorListaLigada<TIPO>(this.primeiro);
     }
+
+    public void adicionarNoComeco(TIPO valor) {
+        Elemento<TIPO> novoElemento = new Elemento<TIPO>(valor);
+        if(this.primeiro == null && this.ultimo == null){
+            this.primeiro = novoElemento;
+            this.ultimo = novoElemento;
+            
+        }else{
+            novoElemento.setProximo(this.primeiro);
+            this.primeiro = novoElemento;
+            
+        }
+
+        this.tamanho ++;
+    }
 }
